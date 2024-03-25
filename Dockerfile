@@ -8,7 +8,7 @@ WORKDIR /IntroContCudaML
 
 COPY requirements.txt ./
 
-RUN pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu121 --verbose
+RUN pip install -r requirements.txt
 
 COPY ./src ./src
 
