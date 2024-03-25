@@ -1,0 +1,35 @@
+{
+    "data_download": {
+        "download_data": false,
+        "path" : "./data/input"
+    },
+    "training": {
+        "train_on_data": true,
+        "path": "./data/input",
+        "batch_size": 64,
+        "learning_rate": {
+            "rate": 0.001,
+            "patience": 5
+        },
+        "num_epochs": 10,
+        "model2": {
+        	"input_size": 784,
+        	"hidden_sizes": [512, 256, 128],
+        	"output_size": 10
+        },
+        "dataloader_args": {
+            "train": {
+                "num_workers": 8,
+                "prefetch_factor": 2,
+                "shuffle": true,
+                "drop_last": true
+            },
+            "val": {
+                "num_workers": 8,
+                "prefetch_factor": 2,
+                "shuffle": false,
+                "drop_last": true
+            }
+        }
+    }
+}
