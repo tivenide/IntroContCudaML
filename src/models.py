@@ -1,8 +1,4 @@
-import torch
 from torch import nn
-from torch.utils.data import DataLoader
-from torchvision import datasets
-from torchvision.transforms import ToTensor
 
 class NeuralNetwork(nn.Module):
     def __init__(self):
@@ -41,10 +37,8 @@ class NeuralNetwork2(nn.Module):
         self.relu = nn.ReLU()
 
     def forward(self, x):
-        # Flatten the input image
-        # x = x.view(-1, self.input_size)
         x = self.flatten(x)
-        # Forward pass through the network
+
         for fc_layer in self.fc_layers:
             x = self.relu(fc_layer(x))
         x = self.output_layer(x)
