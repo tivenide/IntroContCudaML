@@ -5,13 +5,18 @@
     },
     "training": {
         "train_on_data": true,
-        "path": "./data/input",
+        "path_input": "./data/input",
+        "path_output": "./data/output",
         "batch_size": 64,
         "learning_rate": {
             "rate": 0.001,
             "patience": 5
         },
-        "num_epochs": 10,
+        "early_stop": {
+            "patience": 5
+        },
+        "num_epochs": 200,
+        "start_epoch": 0,
         "model2": {
         	"input_size": 784,
         	"hidden_sizes": [512, 256, 128],
